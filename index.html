@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tripleS 人生四格產生器</title>
+    <!-- 引入 Tailwind CSS 與 html2canvas -->
+    <script src="https://jsdelivr.net"></script>
+    <script src="https://cloudflare.com"></script>
+</head>
+<body class="bg-slate-900 text-white min-h-screen p-6 font-sans">
+
+    <div class="max-w-6xl mx-auto">
+        
+        <!-- 🌐 頂部語言切換按鈕區 -->
+        <div class="flex justify-end gap-2 mb-4">
+            <button onclick="changeLanguage('zh')" class="lang-btn px-3 py-1 rounded bg-pink-600 text-xs font-bold cursor-pointer">繁體中文</button>
+            <button onclick="changeLanguage('en')" class="lang-btn px-3 py-1 rounded bg-slate-700 hover:bg-slate-600 text-xs font-bold cursor-pointer">English</button>
+            <button onclick="changeLanguage('ko')" class="lang-btn px-3 py-1 rounded bg-slate-700 hover:bg-slate-600 text-xs font-bold cursor-pointer">한국어</button>
+            <button onclick="changeLanguage('ja')" class="lang-btn px-3 py-1 rounded bg-slate-700 hover:bg-slate-600 text-xs font-bold cursor-pointer">日本語</button>
+        </div>
+
+        <!-- 網頁標題與副標題 -->
+        <h1 id="web-title" class="text-3xl font-bold text-center text-pink-500 mb-2">💎 tripleS Objekt 四格相簿產生器</h1>
+        <p id="web-subtitle" class="text-center text-slate-400 text-sm mb-8">選擇你的本命成員，訂製專屬 tripleS 拍貼相紙！</p>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+            
+            <!-- 左側控制與設定區 -->
+            <div class="lg:col-span-7 bg-slate-800 p-6 rounded-xl shadow-lg space-y-6">
+                
+                <!-- 1. 成員分頁切換按鈕 (S1-S24) -->
+                <div>
+                    <h2 id="step-1-title" class="text-lg font-semibold mb-3 text-pink-400">第一步：切換成員 (S1 - S24)</h2>
+                    <div class="flex gap-2 overflow-x-auto pb-3 scrollbar-thin scrollbar-thumb-slate-600 max-w-full">
+                        <button onclick="switchMember('s1', this)" class="member-btn px-4 py-1.5 rounded-full text-sm font-bold bg-pink-600 text-white cursor-pointer whitespace-nowrap">S1 Seoyeon</button>
+                        <button onclick="switchMember('s2', this)" class="member-btn px-4 py-1.5 rounded-full text-sm font-bold bg-slate-700 hover:bg-slate-600 text-slate-300 cursor-pointer whitespace-nowrap">S2 Hyerin</button>
+                        <button onclick="switchMember('s3', this)" class="member-btn px-4 py-1.5 rounded-full text-sm font-bold bg-slate-700 hover:bg-slate-600 text-slate-300 cursor-pointer whitespace-nowrap">S3 Jiwoo</button>
+                        <button onclick="switchMember('s4', this)" class="member-btn px-4 py-1.5 rounded-full text-sm font-bold bg-slate-700 hover:bg-slate-600 text-slate-300 cursor-pointer whitespace-nowrap">S4 Chaeyeon</button>
+                        <button onclick="switchMember('s5', this)" class="member-btn px-4 py-1.5 rounded-full text-sm font-bold bg-slate-700 hover:bg-slate-600 text-slate-300 cursor-pointer whitespace-nowrap">S5 Yooyeon</button>
+                        <button onclick="switchMember('s6', this)" class="member-btn px-4 py-1.5 rounded-full text-sm font-bold bg-slate-700 hover:bg-slate-600 text-slate-300 cursor-pointer whitespace-nowrap">S6 SooMin</button>
+                        <button onclick="switchMember('s7', this)" class="member-btn px-4 py-1.5 rounded-full text-sm font-bold bg-slate-700 hover:bg-slate-600 text-slate-300 cursor-pointer whitespace-nowrap">S7 NaKyoung</button>
+                        <button onclick="switchMember('s8', this)" class="member-btn px-4 py-1.5 rounded-full text-sm font-bold bg-slate-700 hover:bg-slate-600 text-slate-300 cursor-pointer whitespace-nowrap">S8 YuBin</button>
+                        <button onclick="switchMember('s9', this)" class="member-btn px-4 py-1.5 rounded-full text-sm font-bold bg-slate-700 hover:bg-slate-600 text-slate-300 cursor-pointer whitespace-nowrap">S9 Kaede</button>
+                        <button onclick="switchMember('s10', this)" class="member-btn px-4 py-1.5 rounded-full text-sm font-bold bg-slate-700 hover:bg-slate-600 text-slate-300 cursor-pointer whitespace-nowrap">S10 Dahyun</button>
+                        <button onclick="switchMember('s11', this)" class="member-btn px-4 py-1.5 rounded-full text-sm font-bold bg-slate-700 hover:bg-slate-600 text-slate-300 cursor-pointer whitespace-nowrap">S11 Kotone</button>
+                        <button onclick="switchMember('s12', this)" class="member-btn px-4 py-1.5 rounded-full text-sm font-bold bg-slate-700 hover:bg-slate-600 text-slate-300 cursor-pointer whitespace-nowrap">S12 YeonJi</button>
+                        <button onclick="switchMember('s13', this)" class="member-btn px-4 py-1.5 rounded-full text-sm font-bold bg-slate-700 hover:bg-slate-600 text-slate-300 cursor-pointer whitespace-nowrap">S13 Nien</button>
+                        <button onclick="switchMember('s14', this)" class="member-btn px-4 py-1.5 rounded-full text-sm font-bold bg-slate-700 hover:bg-slate-600 text-slate-300 cursor-pointer whitespace-nowrap">S14 SoHyun</button>
+                        <button onclick="switchMember('s15', this)" class="member-btn px-4 py-1.5 rounded-full text-sm font-bold bg-slate-700 hover:bg-slate-600 text-slate-300 cursor-pointer whitespace-nowrap">S15 Xinyu</button>
+                        <button onclick="switchMember('s16', this)" class="member-btn px-4 py-1.5 rounded-full text-sm font-bold bg-slate-700 hover:bg-slate-600 text-slate-300 cursor-pointer whitespace-nowrap">S16 Mayu</button>
+                        <button onclick="switchMember('s17', this)" class="member-btn px-4 py-1.5 rounded-full text-sm font-bold bg-slate-700 hover:bg-slate-600 text-slate-300 cursor-pointer whitespace-nowrap">S17 Lynn</button>
+                        <button onclick="switchMember('s18', this)" class="member-btn px-4 py-1.5 rounded-full text-sm font-bold bg-slate-700 hover:bg-slate-600 text-slate-300 cursor-pointer whitespace-nowrap">S18 Joobin</button>
+                        <button onclick="switchMember('s19', this)" class="member-btn px-4 py-1.5 rounded-full text-sm font-bold bg-slate-700 hover:bg-slate-600 text-slate-300 cursor-pointer whitespace-nowrap">S19 Hayeon</button>
+                        <button onclick="switchMember('s20', this)" class="member-btn px-4 py-1.5 rounded-full text-sm font-bold bg-slate-700 hover:bg-slate-600 text-slate-300 cursor-pointer whitespace-nowrap">S20 Shion</button>
+                        <button onclick="switchMember('s21', this)" class="member-btn px-4 py-1.5 rounded-full text-sm font-bold bg-slate-700 hover:bg-slate-600 text-slate-300 cursor-pointer whitespace-nowrap">S21 ChaeWon</button>
+                        <button onclick="switchMember('s22', this)" class="member-btn px-4 py-1.5 rounded-full text-sm font-bold bg-slate-700 hover:bg-slate-600 text-slate-300 cursor-pointer whitespace-nowrap">S22 Sullin</button>
+                        <button onclick="switchMember('s23', this)" class="member-btn px-4 py-1.5 rounded-full text-sm font-bold bg-slate-700 hover:bg-slate-600 text-slate-300 cursor-pointer whitespace-nowrap">S23 SeoAh</button>
+                        <button onclick="switchMember('s24', this)" class="member-btn px-4 py-1.5 rounded-full text-sm font-bold bg-slate-700 hover:bg-slate-600 text-slate-300 cursor-pointer whitespace-nowrap">S24 JiYeon</button>
+                    </div>
+                </div>
+
+                <!-- 2. 卡片展示貨櫃區 -->
+                <div>
+                    <h2 id="step-2-title" class="text-lg font-semibold mb-3 text-pink-400">第二步：挑選 4 張卡片</h2>
+                    <div id="card-display-box" class="bg-slate-900 p-3 rounded-lg max-h-[300px] overflow-y-auto">
+                        <p class="text-center text-slate-500 text-sm py-4">Loading Objekt Containers...</p>
+                    </div>
+                </div>
+
+                <!-- 3. 更換背景與輸入文字 -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                        <h2 id="step-3-title" class="text-base font-semibold mb-2 text-pink-400">第三步：手動更換底色</h2>
+                        <div class="flex gap-2">
+                            <button onclick="changeBg('bg-black', 'text-white')" class="w-8 h-8 rounded-full bg-black border border-slate-500 cursor-pointer"></button>
+                            <button onclick="changeBg('bg-white', 'text-black')" class="w-8 h-8 rounded-full bg-white border border-slate-500 cursor-pointer"></button>
+                            <button onclick="changeBg('bg-pink-500', 'text-white')" class="w-8 h-8 rounded-full bg-pink-500 border border-slate-500 cursor-pointer"></button>
+                        </div>
+                    </div>
+                    <div>
+                        <h2 id="step-4-title" class="text-base font-semibold mb-2 text-pink-400">第四步：輸入文字觸發彩蛋</h2>
+                        <input type="text" id="user-text-input" oninput="updateText(this.value)" placeholder="輸入英文/韓文名字如：Seoyeon 或 '윤서연'" class="w-full px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-700 text-sm text-white focus:outline-none focus:border-pink-500">
+                    </div>
+                </div>
+
+                <!-- 按鈕控制區 -->
+                <div class="pt-4 flex gap-4 border-t border-slate-700">
+                    <button id="btn-clear" onclick="clearAll()" class="bg-slate-700 hover:bg-slate-600 px-4 py-2 rounded-lg text-sm transition cursor-pointer">
+                        🔄 重設清空
+                    </button>
+                    <button id="btn-download" onclick="downloadPhoto()" class="flex-1 bg-pink-600 hover:bg-pink-500 font-bold py-2 rounded-lg transition text-center shadow-md cursor-pointer">
+                        📸 匯出人生四格照片
+                    </button>
+                </div>
+            </div>
+
+            <!-- 右側：人生四格即時預覽區 -->
