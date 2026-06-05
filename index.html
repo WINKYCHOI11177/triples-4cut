@@ -38,24 +38,6 @@
                         <button onclick="switchMember('s3', this)" class="member-btn px-4 py-1.5 rounded-full text-sm font-bold bg-slate-700 hover:bg-slate-600 text-slate-300 cursor-pointer whitespace-nowrap">S3 Jiwoo</button>
                         <button onclick="switchMember('s4', this)" class="member-btn px-4 py-1.5 rounded-full text-sm font-bold bg-slate-700 hover:bg-slate-600 text-slate-300 cursor-pointer whitespace-nowrap">S4 Chaeyeon</button>
                         <button onclick="switchMember('s5', this)" class="member-btn px-4 py-1.5 rounded-full text-sm font-bold bg-slate-700 hover:bg-slate-600 text-slate-300 cursor-pointer whitespace-nowrap">S5 Yooyeon</button>
-                        <button onclick="switchMember('s6', this)" class="member-btn px-4 py-1.5 rounded-full text-sm font-bold bg-slate-700 hover:bg-slate-600 text-slate-300 cursor-pointer whitespace-nowrap">S6 SooMin</button>
-                        <button onclick="switchMember('s7', this)" class="member-btn px-4 py-1.5 rounded-full text-sm font-bold bg-slate-700 hover:bg-slate-600 text-slate-300 cursor-pointer whitespace-nowrap">S7 NaKyoung</button>
-                        <button onclick="switchMember('s8', this)" class="member-btn px-4 py-1.5 rounded-full text-sm font-bold bg-slate-700 hover:bg-slate-600 text-slate-300 cursor-pointer whitespace-nowrap">S8 YuBin</button>
-                        <button onclick="switchMember('s9', this)" class="member-btn px-4 py-1.5 rounded-full text-sm font-bold bg-slate-700 hover:bg-slate-600 text-slate-300 cursor-pointer whitespace-nowrap">S9 Kaede</button>
-                        <button onclick="switchMember('s10', this)" class="member-btn px-4 py-1.5 rounded-full text-sm font-bold bg-slate-700 hover:bg-slate-600 text-slate-300 cursor-pointer whitespace-nowrap">S10 Dahyun</button>
-                        <button onclick="switchMember('s11', this)" class="member-btn px-4 py-1.5 rounded-full text-sm font-bold bg-slate-700 hover:bg-slate-600 text-slate-300 cursor-pointer whitespace-nowrap">S11 Kotone</button>
-                        <button onclick="switchMember('s12', this)" class="member-btn px-4 py-1.5 rounded-full text-sm font-bold bg-slate-700 hover:bg-slate-600 text-slate-300 cursor-pointer whitespace-nowrap">S12 YeonJi</button>
-                        <button onclick="switchMember('s13', this)" class="member-btn px-4 py-1.5 rounded-full text-sm font-bold bg-slate-700 hover:bg-slate-600 text-slate-300 cursor-pointer whitespace-nowrap">S13 Nien</button>
-                        <button onclick="switchMember('s14', this)" class="member-btn px-4 py-1.5 rounded-full text-sm font-bold bg-slate-700 hover:bg-slate-600 text-slate-300 cursor-pointer whitespace-nowrap">S14 SoHyun</button>
-                        <button onclick="switchMember('s15', this)" class="member-btn px-4 py-1.5 rounded-full text-sm font-bold bg-slate-700 hover:bg-slate-600 text-slate-300 cursor-pointer whitespace-nowrap">S15 Xinyu</button>
-                        <button onclick="switchMember('s16', this)" class="member-btn px-4 py-1.5 rounded-full text-sm font-bold bg-slate-700 hover:bg-slate-600 text-slate-300 cursor-pointer whitespace-nowrap">S16 Mayu</button>
-                        <button onclick="switchMember('s17', this)" class="member-btn px-4 py-1.5 rounded-full text-sm font-bold bg-slate-700 hover:bg-slate-600 text-slate-300 cursor-pointer whitespace-nowrap">S17 Lynn</button>
-                        <button onclick="switchMember('s18', this)" class="member-btn px-4 py-1.5 rounded-full text-sm font-bold bg-slate-700 hover:bg-slate-600 text-slate-300 cursor-pointer whitespace-nowrap">S18 Joobin</button>
-                        <button onclick="switchMember('s19', this)" class="member-btn px-4 py-1.5 rounded-full text-sm font-bold bg-slate-700 hover:bg-slate-600 text-slate-300 cursor-pointer whitespace-nowrap">S19 Hayeon</button>
-                        <button onclick="switchMember('s20', this)" class="member-btn px-4 py-1.5 rounded-full text-sm font-bold bg-slate-700 hover:bg-slate-600 text-slate-300 cursor-pointer whitespace-nowrap">S20 Shion</button>
-                        <button onclick="switchMember('s21', this)" class="member-btn px-4 py-1.5 rounded-full text-sm font-bold bg-slate-700 hover:bg-slate-600 text-slate-300 cursor-pointer whitespace-nowrap">S21 ChaeWon</button>
-                        <button onclick="switchMember('s22', this)" class="member-btn px-4 py-1.5 rounded-full text-sm font-bold bg-slate-700 hover:bg-slate-600 text-slate-300 cursor-pointer whitespace-nowrap">S22 Sullin</button>
-                        <button onclick="switchMember('s23', this)" class="member-btn px-4 py-1.5 rounded-full text-sm font-bold bg-slate-700 hover:bg-slate-600 text-slate-300 cursor-pointer whitespace-nowrap">S23 SeoAh</button>
                         <button onclick="switchMember('s24', this)" class="member-btn px-4 py-1.5 rounded-full text-sm font-bold bg-slate-700 hover:bg-slate-600 text-slate-300 cursor-pointer whitespace-nowrap">S24 JiYeon</button>
                     </div>
                 </div>
@@ -64,7 +46,31 @@
                 <div>
                     <h2 id="step-2-title" class="text-lg font-semibold mb-3 text-pink-400">第二步：挑選 4 張卡片</h2>
                     <div id="card-display-box" class="bg-slate-900 p-3 rounded-lg max-h-[300px] overflow-y-auto">
-                        <p class="text-center text-slate-500 text-sm py-4">Loading Objekt Containers...</p>
+                        <!-- S1 獨立卡片庫 -->
+                        <div id="container-s1" class="member-container grid grid-cols-3 gap-3">
+                            <img src="https://placehold.co" onclick="selectCard(this.src)" class="w-full h-24 object-cover rounded-lg cursor-pointer hover:scale-105 transition border-2 border-transparent hover:border-pink-500">
+                            <img src="https://placehold.co" onclick="selectCard(this.src)" class="w-full h-24 object-cover rounded-lg cursor-pointer hover:scale-105 transition border-2 border-transparent hover:border-pink-500">
+                        </div>
+                        <!-- S2 獨立卡片庫 -->
+                        <div id="container-s2" class="member-container grid grid-cols-3 gap-3 hidden">
+                            <img src="https://placehold.co" onclick="selectCard(this.src)" class="w-full h-24 object-cover rounded-lg cursor-pointer hover:scale-105 transition border-2 border-transparent hover:border-pink-500">
+                        </div>
+                        <!-- S3 獨立卡片庫 -->
+                        <div id="container-s3" class="member-container grid grid-cols-3 gap-3 hidden">
+                            <img src="https://placehold.co" onclick="selectCard(this.src)" class="w-full h-24 object-cover rounded-lg cursor-pointer hover:scale-105 transition border-2 border-transparent hover:border-pink-500">
+                        </div>
+                        <!-- S4 獨立卡片庫 -->
+                        <div id="container-s4" class="member-container grid grid-cols-3 gap-3 hidden">
+                            <img src="https://placehold.co" onclick="selectCard(this.src)" class="w-full h-24 object-cover rounded-lg cursor-pointer hover:scale-105 transition border-2 border-transparent hover:border-pink-500">
+                        </div>
+                        <!-- S5 獨立卡片庫 -->
+                        <div id="container-s5" class="member-container grid grid-cols-3 gap-3 hidden">
+                            <img src="https://placehold.co" onclick="selectCard(this.src)" class="w-full h-24 object-cover rounded-lg cursor-pointer hover:scale-105 transition border-2 border-transparent hover:border-pink-500">
+                        </div>
+                        <!-- S24 獨立卡片庫 -->
+                        <div id="container-s24" class="member-container grid grid-cols-3 gap-3 hidden">
+                            <img src="https://placehold.co" onclick="selectCard(this.src)" class="w-full h-24 object-cover rounded-lg cursor-pointer hover:scale-105 transition border-2 border-transparent hover:border-pink-500">
+                        </div>
                     </div>
                 </div>
 
@@ -96,3 +102,14 @@
             </div>
 
             <!-- 右側：人生四格即時預覽區 -->
+            <div class="lg:col-span-5 flex flex-col items-center">
+                <h2 id="preview-title" class="text-lg font-semibold mb-4 text-pink-400">預覽結果</h2>
+                
+                <div id="four-cut-box" style="background-color: #000000;" class="text-white p-4 w-64 flex flex-col gap-3 items-center shadow-2xl rounded-sm transition-all duration-300">
+                    <div class="slot w-56 h-36 bg-slate-700/50 rounded flex items-center justify-center text-xs text-slate-400 border border-slate-600/30 overflow-hidden"><span class="slot-text">點擊左側卡片</span></div>
+                    <div class="slot w-56 h-36 bg-slate-700/50 rounded flex items-center justify-center text-xs text-slate-400 border border-slate-600/30 overflow-hidden"><span class="slot-text">點擊左側卡片</span></div>
+                    <div class="slot w-56 h-36 bg-slate-700/50 rounded flex items-center justify-center text-xs text-slate-400 border border-slate-600/30 overflow-hidden"><span class="slot-text">點擊左側卡片</span></div>
+                    <div class="slot w-56 h-36 bg-slate-700/50 rounded flex items-center justify-center text-xs text-slate-400 border border-slate-600/30 overflow-hidden"><span class="slot-text">點擊左側卡片</span></div>
+
+                    <div class="w-full text-center mt-1 pt-2 border-t border-zinc-500/20">
+                        <p class="font-bold tracking-widest text-sm italic text-pink-500">tripleS</p>
